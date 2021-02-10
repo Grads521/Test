@@ -1,0 +1,16 @@
+{
+  "name": "max",
+  "version": "1.0.0",
+  "description": "",
+  "main": "alert.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^4.1.1",
+    "parcel-bundler": "^1.12.4"
+  }
+}
