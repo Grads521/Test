@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="style.less">
     </head>
     <body>
-        <div class="positioner">
+        <div class="positioner"></div>
             <header>
                 <div class="menu-container">
                     <nav>
-                        <li class=""><a href="" class="">Биография</a></li>
-                        <li class=""><a href="" class="">Достижения</a></li>
+                        <li class=""><a href="index.html" class="">Биография</a></li>
+                        <li class=""><a href="inner.html" class="">Достижения</a></li>
                     </nav>
                 </div>
             </header>
@@ -22,10 +22,15 @@
 
                 <p class="fio" id="fio"></p>
 
-                <div class="phone" id="phone"> 89211834241 </div>
+                <button data-toggle-id="show-hide-phone">
+                    Показать\скрыть телефон
+                </button>
 
-                <input type="button" id="button" value="Показать телефон">
+                <form id="show-hide-phone" hidden>
+                    <div class="phone">89211834241</div>
+                </form>
+
             </main>
-            <script src="alert.js"></script>
+            <script src="dss.js"></script>
     </body>
 </html>
