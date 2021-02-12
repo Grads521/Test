@@ -1,34 +1,28 @@
-// const games = [
-//     'Lol',
-//     'CS',
-//     'Apex',
-// ];
+// const fio = document.querySelector('.fio').textContent;
 
-// const input = document.querySelector('.input_field')
-//
-// input.addEventListener('keyup', function () {
-//     const ageBlock = document.querySelector('.age');
-//     ageBlock.innerText = input.value;
-// });
+// fio.textContent = 'Исаев Максим Сергеевич';
+
+document.querySelector('.fio').textContent = 'Исаев Максим Сергеевич';
+
+const buttonPhone = document.querySelector('.show-phone');
+
+buttonPhone.addEventListener('click', togglephone);
+
+let isPhoneInvisible = true;
+
+function togglephone() {
+    if (isPhoneInvisible === false) {
+        isPhoneInvisible = true;
+        buttonPhone.textContent = 'Показать телефон';
+
+    } else {
+        isPhoneInvisible = false
+        buttonPhone.textContent = 'Скрыть телефон';
+    }
+    const showPhone = document.querySelector('.phone');
+    showPhone.hidden = isPhoneInvisible;
+}
 
 
 
-// const gameBlock = document.querySelector('.myGames');
-//
-// games.forEach(function (item) {
-//     const gameOne = document.createElement('div');
-//     gameOne.innerText = item;
-//
-//     gameBlock.append(gameOne);
-// });
 
-document.getElementById("fio").innerHTML = "Исаев Максим Сергеевич";
-
-document.addEventListener('click', function(event) {
-    let id = event.target.dataset.toggleId;
-    if (!id) return;
-
-    let elem = document.getElementById(id);
-
-    elem.hidden = !elem.hidden;
-});
