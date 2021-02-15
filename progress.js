@@ -19,7 +19,7 @@ const buttonAddChapter = document.querySelector('.addChapter');
 buttonAddChapter.addEventListener('click', addChapter);
 
 function addChapter() {
-    let textChapter = document.getElementById('inputText').value;
+    let textChapter = document.querySelector('.inputText').value;
 
     myChapters.push(textChapter);
 
@@ -29,9 +29,9 @@ function addChapter() {
         pval = pval + myChapters[i] + '<br/>';
     }
 
-    document.getElementById('pText').innerHTML = pval;
+    document.querySelector('.myChapters').innerHTML = pval;
 
-    document.getElementById('inputText').value = '';
+    document.querySelector('.inputText').value = '';
 }
 
 const buttonCleanText = document.querySelector('.cleanText');
@@ -39,5 +39,5 @@ const buttonCleanText = document.querySelector('.cleanText');
 buttonCleanText.addEventListener('click', cleanText);
 
 function cleanText() {
-    document.getElementById('inputText').value = '';
+    document.querySelector('.inputText').value = '';
 }
