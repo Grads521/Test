@@ -1,3 +1,13 @@
+function addArr() {
+    myChapters.forEach(function (item) {
+
+        let newChapter = document.createElement('li');
+        newChapter.innerText = item;
+
+        chapterBlock.append(newChapter);
+    })
+} /* повторяющаяся функция */
+
 let myChapters = [
     'Глава 1',
     'Глава 2',
@@ -32,12 +42,3 @@ function cleanText() {
     document.querySelector('.inputText').value = '';
 }
 
-function addArr() {
-    myChapters.forEach(function (item) {
-
-        let newChapter = document.createElement('li');
-        newChapter.innerText = item;
-
-        chapterBlock.append(newChapter);
-    })
-}
