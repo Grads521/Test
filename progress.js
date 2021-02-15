@@ -18,18 +18,20 @@ const buttonAddChapter = document.querySelector('.addChapter');
 
 buttonAddChapter.addEventListener('click', addChapter);
 
-function addChapter() {
+function addChapter () {
+    chapterBlock.innerHTML = null;
+
     let textChapter = document.querySelector('.inputText').value;
 
     myChapters.push(textChapter);
 
-    let pval = '';
+    myChapters.forEach(function (item) {
 
-    for(i = 0; i < myChapters.length; i++) {
-        pval = pval + myChapters[i] + '<br/>';
-    }
+        let chapterTwo = document.createElement('li');
+        chapterTwo.innerText = item;
 
-    document.querySelector('.myChapters').innerHTML = pval;
+        chapterBlock.append(chapterTwo);
+    })
 
     document.querySelector('.inputText').value = '';
 }
