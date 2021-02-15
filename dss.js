@@ -2,26 +2,26 @@
 
 // fio.textContent = 'Исаев Максим Сергеевич';
 
-document.querySelector('.fio').textContent = 'Исаев Максим Сергеевич';
-
-const buttonPhone = document.querySelector('.show-phone');
-
-buttonPhone.addEventListener('click', togglePhone);
-
-let isPhoneInvisible = true;
-
-function togglePhone() {
-    if (isPhoneInvisible === false) {
-        isPhoneInvisible = true;
-        buttonPhone.textContent = 'Показать телефон';
-
-    } else {
-        isPhoneInvisible = false
-        buttonPhone.textContent = 'Скрыть телефон';
-    }
-    const showPhone = document.querySelector('.phone');
-    showPhone.hidden = isPhoneInvisible;
-}
+// document.querySelector('.fio').textContent = 'Исаев Максим Сергеевич';
+//
+// const buttonPhone = document.querySelector('.show-phone');
+//
+// buttonPhone.addEventListener('click', togglePhone);
+//
+// let isPhoneInvisible = true;
+//
+// function togglePhone() {
+//     if (isPhoneInvisible === false) {
+//         isPhoneInvisible = true;
+//         buttonPhone.textContent = 'Показать телефон';
+//
+//     } else {
+//         isPhoneInvisible = false
+//         buttonPhone.textContent = 'Скрыть телефон';
+//     }
+//     const showPhone = document.querySelector('.phone');
+//     showPhone.hidden = isPhoneInvisible;
+// }
 
 let myChapters = [
     'Глава 1',
@@ -32,35 +32,45 @@ let myChapters = [
 let chapterBlock = document.querySelector('.myChapters');
 
 myChapters.forEach(function (item) {
-    let chapterOne = document.createElement('div');
+
+    let chapterOne = document.createElement('li');
     chapterOne.innerText = item;
 
     chapterBlock.append(chapterOne);
 });
 
-const input = document.querySelector('.input_field')
+const buttonAddChapter = document.querySelector('.addChapter');
 
-input.addEventListener('keyup', function () {
-    const ageBlock = document.querySelector('.myChapters');
-    ageBlock.innerText = input.value;
-});
+buttonAddChapter.addEventListener('click', addChapter);
+
+function addChapter() {
+    let textChapter = document.getElementById('inputText').value;
+
+    myChapters.push(textChapter);
+
+    let pval = '';
+
+    for(i = 0; i < myChapters.length; i++) {
+        pval = pval + myChapters[i] + '<br/>';
+    }
+       
+    document.getElementById('pText').innerHTML = pval;
+
+    document.getElementById('inputText').value = '';
+}
+
+const buttonCleanText = document.querySelector('.cleanText');
+
+buttonCleanText.addEventListener('click', cleanText);
+
+function cleanText() {
+    document.getElementById('inputText').value = '';
+}
 
 
-// const buttonAddChapter = document.querySelector('addChapter');
-//
-// const buttonCleanChapter = document.querySelector('cleanChapter');
-//
-// buttonAddChapter.addEventListener('click', addChapter);
-//
-// buttonCleanChapter.addEventListener('click', cleanChapter);
 
-// function addChapter() {
-//     myChapters.push('Глава 4')
-// }
 
-// function cleanChapter() {
-//     myChapters.pop()
-// }
+
 
 
 
